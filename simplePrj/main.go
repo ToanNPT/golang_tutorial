@@ -1,7 +1,6 @@
 package main
 
 import (
-	"./middlewares"
 	"log"
 	"net/http"
 	"os"
@@ -30,7 +29,7 @@ func main() {
 		MaxAge:           300,
 	}))
 
-	router.Use(middlewares.LogRequest)
+	router.Use(logRequest)
 
 	v1Router := chi.NewRouter()
 	v1Router.Get("/healthz", handlerReadiness)
