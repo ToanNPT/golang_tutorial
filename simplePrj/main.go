@@ -30,7 +30,7 @@ func main() {
 		MaxAge:           300,
 	}))
 
-	router.Use(middlewares.logRequest)
+	router.Use(middlewares.LogRequest)
 
 	v1Router := chi.NewRouter()
 	v1Router.Get("/healthz", handlerReadiness)
